@@ -18,8 +18,26 @@ python src/ftp_client.py
 
 程序仅依赖 Python 标准库。启动后填写 FTP 服务器地址、端口、用户名和密码，连接成功后即可双击远程目录进入，选择文件上传或下载。
 
+## 本地示例 FTP 服务器
+
+如果没有现成 FTP 服务器，可以先启动项目自带的本地测试服务器：
+
+```bash
+python tools/demo_ftp_server.py
+```
+
+然后在客户端中填写：
+
+- Host: `127.0.0.1`
+- Port: `2121`
+- User: 任意内容
+- Password: 任意内容
+
+测试服务器的根目录默认是 `demo_ftp_root/`，支持目录列表、上传、下载和断点续传。它只用于本地实验，不要作为公网服务使用。
+
 ## 目录
 
 - `src/ftp_client.py`：FTP 客户端源码。
+- `tools/demo_ftp_server.py`：本地示例 FTP 服务器。
 - `tools/generate_report.py`：根据实验报告模板生成报告初稿。
 - `report/计网-xx组.docx`：生成后的实验报告初稿。
